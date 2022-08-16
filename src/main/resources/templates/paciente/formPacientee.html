@@ -1,0 +1,86 @@
+<html>
+    <head>
+    <title>Cadastro</title>
+</head>
+<style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+
+    body{
+        background-color: #5F7C8A;
+    }
+
+    form{
+        background-color: white;
+        max-width: 500px;
+        width: 70%;
+        padding: 20px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    form h3 {
+        text-align: center;
+        color: #5F7C8A;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin-bottom: 15px;
+    }
+
+    form input[type = circulo],
+    form input[type = password] {
+        width: 100%;
+        height: 45px;
+        border: 1px solid #ccc;
+        padding-left: 10px;
+        margin: 10px 0;
+    }
+
+    form input[type=submit] {
+        width: 100%;
+        height: 40px;
+        cursor: pointer;
+        background-color: #5F7C8A;
+        color: white;
+        border: 0;
+        border-radius: 20px;
+        transition: 0.5s;
+    }
+
+    form input[type=checkbox] {
+        margin-left: 50%;
+        margin-right: 50%;
+    }
+
+    form input[type=submit]:hover {
+        background-color: #6b95ac;
+    }
+
+    span{
+        position: relative;
+    }
+</style>
+    <body>
+        <form method="post">
+            <h3>Cadastrar paciente</h3>
+                     
+             
+            <input type="circulo" name="nome" id="nome" placeholder="Digite o nome">
+            <input type="circulo" name="email" placeholder="Digite um Email para contato"/>
+  			<input type="circulo" id="telefone" class="input-padrao" placeholder="Digite um número no formato: (xx) xxxxx-xxxx">
+            <input type="circulo" name="cpf" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2" placeholder = "Digite um CPF no formato: xxx.xxx.xxx-xx">
+			
+			
+		    Data de Nascimento do Paciente: <input type="date" name="nascimento" id="nascimento" placeholder="dd/MM/yyyy"/><br><br/>
+			Masculino: <input type="radio" name="sexo" checked="checked" value="Masculino" /><br><br/>
+            Feminino: <input type="radio" name="sexo" value="Feminino" /><br><br/>
+            Descrição do Paciente <textarea id="msg" name="msg" rows="4" cols="60"></textarea><br><br/>
+			
+            <input type="submit" name="cadastrar" value="Cadastrar" th:href="@{/Inicio}"/>
+             <a th:href=@{/Inicio}>VOLTAR PARA TELA INICIAL<a/>
+            
+
+        </form>
+    </body>
+
+</html>
