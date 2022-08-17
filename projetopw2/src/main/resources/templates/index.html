@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Consultando Dados</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="/">Sistema de Consulta</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+	</nav>
+	<div class="container">
+		<div class="row justify-content-md-center">
+			<h1>Pacientes Cadastrados</h1>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<a th:href="@{/cadastrarPaciente}" class=" btn btn-primary btn-sm mb-3">Cadastrar Paciente</a>
+			</div>
+		</div>
+		<br>
+		<table background:"Celestial.png" class="table table-success table-sm table-striped table-bordered ">
+			<thead class="table-dark">
+				<tr>
+					<th scope="col">Nome</th>
+					<th scope="col">Sobrenome</th>
+					<th scope="col">Idade</th>
+					<th scope="col">Email</th>
+					<th scope="col">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="aluno:${alunos}">
+					<td th:text="${aluno.nome}"></td>
+					<td th:text="${aluno.sobrenome}"></td>
+					<td th:text="${aluno.idade}"></td>
+					<td th:text="${aluno.email}"></td>
+						
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</body>
+</html>
