@@ -1,11 +1,13 @@
 package com.consultorioapp.projetopw2.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Paciente implements Serializable{
@@ -21,6 +23,8 @@ public class Paciente implements Serializable{
 	private String email;
 	private String dataNascimento;
 	
+	@OneToMany
+	private List<Consulta> consultas;
 	
 	public long getId() {
 		return id;

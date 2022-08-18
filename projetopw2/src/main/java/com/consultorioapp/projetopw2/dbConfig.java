@@ -18,7 +18,7 @@ public class dbConfig {
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/consultorio?useTimezone=true&serverTimezone=America/Sao_Paulo");
 		dataSource.setUsername("root");
-		dataSource.setPassword("38714843");
+		dataSource.setPassword("");
 		return dataSource;
 	}
 

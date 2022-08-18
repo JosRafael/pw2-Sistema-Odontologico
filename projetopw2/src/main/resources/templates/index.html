@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th=xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Consultando Dados</title>
+      
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+  
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -10,7 +16,7 @@
 
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="/">Sistema de Consulta</a>
+		<a class="navbar-brand" href="/">Sistema Odontologico</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
 			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -19,7 +25,7 @@
 	</nav>
 	<div class="container">
 		<div class="row justify-content-md-center">
-			<h1>Pacientes Cadastrados</h1>
+			<h1>Lista de Pacientes Cadastrados</h1>
 		</div>
 		<div class="row">
 			<div class="col-lg-3">
@@ -31,23 +37,27 @@
 			<thead class="table-dark">
 				<tr>
 					<th scope="col">Nome</th>
-					<th scope="col">Sobrenome</th>
-					<th scope="col">Idade</th>
+					<th scope="col">Data de Nascimento</th>
+					<th scope="col">Telefone</th>
+					<th scope="col">cpf</th>
 					<th scope="col">Email</th>
 					<th scope="col">Ações</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="aluno:${alunos}">
-					<td th:text="${aluno.nome}"></td>
-					<td th:text="${aluno.sobrenome}"></td>
-					<td th:text="${aluno.idade}"></td>
-					<td th:text="${aluno.email}"></td>
+				<tr th:each="paciente:${paciente}">
+					<td><a th:href="${(#mvc.url('PC#detalhesConsulta').arg(0, paciente.id)).build()}"><span th:text="${paciente.nome}"></span></a></td>
+					<td th:text="${paciente.dataNascimento}"></td>
+					<td th:text="${paciente.telefone}"></td>
+					<td th:text="${paciente.cpf}"></td>
+					<td th:text="${paciente.email}"></td>
 						
 				</tr>
 			</tbody>
 		</table>
 	</div>
+	<!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	
 </body>
 </html>

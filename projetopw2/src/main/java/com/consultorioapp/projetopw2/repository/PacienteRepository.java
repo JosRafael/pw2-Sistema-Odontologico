@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.consultorioapp.projetopw2.models.Paciente;
 
 public interface PacienteRepository extends CrudRepository<Paciente, String> {
-	
+	Paciente findById(long id);
 }
