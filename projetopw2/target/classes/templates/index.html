@@ -62,6 +62,7 @@
 			<td><span th:text="${paciente.cpf}"></span></td>
 			<td><span th:text="${paciente.telefone}"></span></td>
 			<td><a class="waves-effect waves-light btn-tiny" th:href="${(#mvc.url('PC#deletarPaciente').arg(0, paciente.id)).build()}"><i class="material-icons left">delete</i></a></td>
+			<td><a class="waves-effect waves-light btn-tiny" th:href="${(#mvc.url('PC#editarPaciente').arg(0, paciente.id)).build()}"><i class="material-icons left">edit</i></a></td>
 			</tr>
 		</tbody>
 	</table>

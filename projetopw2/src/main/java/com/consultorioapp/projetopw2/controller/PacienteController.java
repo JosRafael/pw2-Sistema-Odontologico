@@ -75,4 +75,18 @@ public class PacienteController {
 		attributes.addFlashAttribute("mensagem", "Consulta agendada com sucesso!");
 		return "redirect:/{id}";
 	}
+	@RequestMapping(value="/editarPaciente", method = RequestMethod.GET)
+	public ModelAndView editarPaciente(long id) {
+		Paciente paciente = pr.findById(id);
+		ModelAndView mv = new ModelAndView("evento/editarPaciente");
+		mv.addObject("paciente", paciente);
+		return mv;
+	}
+	
+	@RequestMapping(value="editarPaciente", method = RequestMethod.POST)
+	public String updatePaciente(@Valid Paciente paciente, BindingResult result, RedirectAttributes attributes) {
+		pr.save(paciente);
+		attributes.addFlashAttribute("mensagem", "Paciente alterado com sucesso!");
+		return "redirect:/pacientes";
+	}
 }
