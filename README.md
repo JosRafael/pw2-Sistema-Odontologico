@@ -22,6 +22,6 @@ Projeto relacionado ao curso de Sistemas para Internet, durante o 4º período, 
 - Banco configurado.
 
 # Padrão de projeto
-- MVP
+- MVC
 - DTO
 
