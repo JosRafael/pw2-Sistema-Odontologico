@@ -23,5 +23,5 @@ Projeto relacionado ao curso de Sistemas para Internet, durante o 4º período, 
 
 # Padrão de projeto
 - MVP
-- Facade
-https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm
+- DTO
+
