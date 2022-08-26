@@ -1,0 +1,40 @@
+ <html>
+	<head>
+	<title>Cadastrar</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	
+	<!--Import Style-->	
+	<link rel="stylesheet" href="css/styleForms.css"/>
+	</head>
+<body>
+		<a class="navbar-brand" href="/">Sistema Odontologico</a>
+		<a href="/pacientes" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Pacientes</a>
+	
+</body>      
+         <body>
+         
+         <th:block th:include="mensagemValidacao"></th:block>
+         
+         <form method="post">
+
+		 <h3>Cadastrar paciente</h3>
+		 
+				<input th:attr="value=${paciente.nome}" type="circulo" id="nome" name="nome" required placeholder ="Digite o Nome do Paciente">   
+				<input th:attr="value=${paciente.email}" type="circulo" id="email" name="email" required placeholder ="Digite um Email para contato">   
+				<input th:attr="value=${paciente.cpf}" type="circulo" id="cpf" name="cpf" required placeholder = "Digite um CPF no formato: xxx.xxx.xxx-xx"/>   
+				<input th:attr="value=${paciente.dataNascimento}" type="date" id="dataNascimento" name="dataNascimento" required>
+				<input th:attr="value=${paciente.telefone}" type = "number" id="telefone" name="telefone" required placeholder= "(xx) xxxxx-xxxx">
+				<br> <input type="submit" name="Concluido" value="Concluido" /></br> 
+         
+             
+            </form> 
+          </body>
+         
+          <script>
+         
+          </script>
+         
+          </html>  

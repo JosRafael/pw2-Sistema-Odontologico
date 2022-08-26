@@ -1,0 +1,53 @@
+ <html>
+	<head>
+	<title>Cadastrar</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		 
+	<!--Import Style-->	
+	<link rel="stylesheet" href="css/styleForms.css"/>
+	
+	</head>
+
+<body>
+		<a class="navbar-brand" href="/">Sistema Odontologico</a>
+		<a href="/pacientes" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Pacientes</a>
+		<th:block th:include="mensagemValidacao"></th:block>
+</body>
+	 
+         <body>
+           <form method="post">
+		<!-- Header do Formulario -->
+		 <h3>Cadastrar paciente</h3>
+                <!-- Campo onde o Usuário coloca seu nome -->
+               <input type="circulo" id="nome" name="nome" required placeholder ="Digite o Nome do Paciente">   
+                    
+                <!-- Campo onde o Usuário coloca seu email -->
+                    <input type="circulo" id="email" name="email" required placeholder ="Digite um Email para contato">   
+                
+             <!-- Campo onde o Usuário coloca seu cpf -->
+                  <input type="circulo" id="cpf" name="cpf" required placeholder = "Digite um CPF no formato: xxx.xxx.xxx-xx"/>   
+
+                <!-- Campo onde o Usuário coloca sua data de nascimento-->
+               
+                   <p><input type="date" id="dataNascimento" name="dataNascimento" required> </p>
+
+                <!-- Campo onde o Usuário coloca seu celular -->
+          
+  				<input type = "number" id="telefone" name="telefone" required placeholder= "(xx) xxxxx-xxxx">
+  				
+                <!-- Botão que envia o Formulário -->
+               
+               <br> <input type="submit" name="Concluido" value="Concluido" /></br> 
+         
+             
+            </form> 
+          </body>
+         
+          <script>
+         
+          </script>
+         
+          </html>  

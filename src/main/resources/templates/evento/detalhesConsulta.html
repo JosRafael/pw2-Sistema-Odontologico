@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th=xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Consultando Dados</title>
+      
+     <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>    
+
+    <!--Import Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	 <!--Import Style-->	
+	<link rel="stylesheet" href="css/styleForms.css"
+	</head>
+
+<body>
+		<h3><a href="/pacientes" class="btn btn-primary btn-sm mb-3"><i class="material-icons left">add_circle_outline</i>Lista de Pacientes</a></h3>
+	
+</body>
+        
+     
+         <body>
+           <form method="post">
+		<!-- Header do Formulario -->
+		 <h3>Agendar Consulta</h3>
+		<div th:each="paciente : ${paciente}" class="container">
+		<div class="center">
+			<p><strong>Paciente: </strong><span th:text="${paciente.nome}"></span></p>
+			
+		</div>
+                  
+                <!-- Campo onde é adicionado a Desc -->
+                    <input type="circulo" id="descricao" name="descricao" required placeholder ="Descrição">   
+                
+             <!-- Campo onde é adicionado a Data da consulta -->
+                  <input type="date" id="data" name="dataConsulta" required placeholder = "Data da Consulta"/>   
+
+                <!-- Campo onde é adicionado a Hora-->
+               
+                   <p><input type="time" id="horarioConsulta" name="horarioConsulta" required> </p>
+		
+  			<!-- Campo onde sera Informado o Medico-->     
+              <input type="circulo" value="" name="nomeDentista" required placeholder="Digite o Nome do Dentista">
+                
+                <!-- Botão que envia o Formulário -->
+               
+               <br> <input type="submit" name="Concluido" value="Concluido" /></br> 
+             
+            </form> 
+                   
+           
+           <table class="container tabelaConvidado">	
+		<thead>
+			<tr>
+				<th>Codigo</th>
+				<th>Descrição</th>
+				<th>Data</th>
+				<th>Horario</th>
+				<th>Dentista<th>
+			
+			</tr>
+		</thead>
+		
+		<tbody>
+			<br><h3>Agendamentos do paciente </h3>
+			<tr th:each="consulta : ${consultas}">
+				<td><span th:text="${consulta.codigo}"></span></td>
+				<td><span th:text="${consulta.descricao}"></span></td>
+				<td><span th:text="${consulta.dataConsulta}"></span></td>
+				<td><span th:text="${consulta.horarioConsulta}"></span></td>
+				<td><span th:text="${consulta.nomeDentista}"></span></td>
+		<td><a class="waves-effect waves-light btn-s" th:href="${(#mvc.url('CC#deletarConsulta').arg(0, consulta.codigo)).build()}"><i class="material-icons left">delete</i></a></td>
+			</tr>
+		</tbody>
+	</table>
+      	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   	   <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+</html> 
