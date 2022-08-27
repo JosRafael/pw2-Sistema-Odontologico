@@ -2,7 +2,7 @@
 Projeto relacionado ao curso de Sistemas para Internet, durante o 4º período, na matéria de Programação WEB 2, ministrada pelo professor Francisco Júnior. 
 
 # Informações 📝
-- Projeto básico utilizando Spring.
+- Projeto básico utilizando Spring Boot
 
 # Dependências
 - Spring Data JPA 
@@ -23,4 +23,4 @@ Projeto relacionado ao curso de Sistemas para Internet, durante o 4º período, 
 
 # Padrão de projeto
 - MVP 
-- Data Transfer Object 
+- Data Transfer Object(DTO)
